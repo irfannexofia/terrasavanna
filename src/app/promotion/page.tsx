@@ -12,7 +12,7 @@ const projectPhotos = [
   ...((gallery.find((item) => item.title === 'Sky House BSD Tower Kensington 2')?.images ?? [])),
 ]
 const options = {
-  interiorType: ['Interior Apartemen', 'Interior Rumah / Villa', 'Interior Kantor', 'Interior Komersial', 'Lainnya'], area: ['Di bawah 100 m²', '100–300 m²', '301–500 m²', 'Di atas 500 m²', 'Belum mengetahui luas'], budget: ['Di bawah Rp 100 Juta', 'Di bawah Rp100juta', 'Rp 100juta - 300juta', 'Rp300juta - 800juta', 'Rp800 juta – Rp1,5 miliar', 'Rp1,5 – 3 miliar', 'Rp3 – 5 miliar', 'Rp5 – 10 miliar', 'Di atas Rp10 miliar'], timeline: ['Sesegera mungkin', 'Dalam 1–3 bulan', 'Dalam 3–6 bulan', 'Masih tahap perencanaan'],
+  interiorType: ['Interior Apartemen', 'Interior Rumah / Villa', 'Interior Kantor', 'Interior Komersial', 'Lainnya'], area: ['Di bawah 100 m²', '100–300 m²', '301–500 m²', 'Di atas 500 m²', 'Belum mengetahui luas'], budget: ['Di bawah Rp 100 Juta', 'Rp 100juta - 300juta', 'Rp300juta - 800juta', 'Rp800 juta – Rp1,5 miliar', 'Rp1,5 – 3 miliar', 'Rp3 – 5 miliar', 'Rp5 – 10 miliar', 'Di atas Rp10 miliar'], timeline: ['Sesegera mungkin', 'Dalam 1–3 bulan', 'Dalam 3–6 bulan', 'Masih tahap perencanaan'],
 }
 
 export default function PromotionPage() {
