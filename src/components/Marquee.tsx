@@ -1,0 +1,1 @@
+export function Marquee() { return <div className="marquee" aria-hidden="true"><div className="marquee__track">{Array.from({ length: 2 }).map((_, index) => <span key={index}>Interior design & build <b>✳</b> Custom furniture <b>✳</b> Spaces for living fully <b>✳</b> Terra Savanna <b>✳</b></span>)}</div></div> }
