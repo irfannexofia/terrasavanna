@@ -599,3 +599,8 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 .admin-table-wrap th, .admin-table-wrap td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
 .admin-table-wrap th { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
 .admin-empty { padding: 2rem; color: var(--text-muted); }
+.thank-you { min-height: 100vh; display: grid; place-items: center; padding: 2rem var(--pad); background: var(--bg-dark); color: var(--text-light); }
+.thank-you__card { width: min(100%, 680px); text-align: center; }
+.thank-you__card h1 { font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1; font-weight: 400; }
+.thank-you__card > p:not(.eyebrow) { margin: 1.25rem auto; max-width: 500px; color: var(--text-light-muted); line-height: 1.7; }
+.thank-you__instagram { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: 1.5rem; color: var(--text-light-muted); }
