@@ -1,0 +1,12 @@
+'use client'
+
+import { useState } from 'react'
+
+type Lead = { id: number; interior_type: string; location: string; area: string; budget: string; timeline: string; name: string; whatsapp: string; notes: string; created_at: string }
+
+export default function LeadsAdminPage() {
+  const [password, setPassword] = useState(''); const [leads, setLeads] = useState<Lead[]>([]); const [error, setError] = useState(''); const [loading, setLoading] = useState(false); const [authorized, setAuthorized] = useState(false)
+  async function login(event: React.FormEvent) { event.preventDefault(); setLoading(true); setError(''); const response = await fetch('/api/admin/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }) }); const data = await response.json(); setLoading(false); if (!response.ok) return setError(data.error); setLeads(data.leads); setAuthorized(true) }
+  if (!authorized) return <main className="admin-page"><div className="admin-login"><p className="eyebrow">Terra Savanna · Private</p><h1>Ads leads</h1><p>Masukkan password untuk melihat data lead dari formulir promosi.</p><form onSubmit={login}><label>Password<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} autoFocus required /></label><button className="btn btn--dark" disabled={loading}>{loading ? 'Memeriksa...' : 'Masuk'}</button>{error && <p className="admin-error">{error}</p>}</form></div></main>
+  return <main className="admin-page"><div className="admin-shell"><div className="admin-header"><div><p className="eyebrow">Database leads</p><h1>Ads leads</h1></div><button className="btn btn--ghost" onClick={() => { setAuthorized(false); setPassword(''); setLeads([]) }}>Keluar</button></div><div className="admin-table-wrap"><table><thead><tr><th>ID</th><th>Tanggal</th><th>Nama</th><th>WhatsApp</th><th>Jenis interior</th><th>Lokasi</th><th>Luas</th><th>Anggaran</th><th>Timeline</th><th>Catatan</th></tr></thead><tbody>{leads.map((lead) => <tr key={lead.id}><td>{lead.id}</td><td>{new Date(lead.created_at).toLocaleString('id-ID')}</td><td>{lead.name}</td><td>{lead.whatsapp}</td><td>{lead.interior_type}</td><td>{lead.location}</td><td>{lead.area}</td><td>{lead.budget}</td><td>{lead.timeline}</td><td>{lead.notes || '—'}</td></tr>)}</tbody></table>{leads.length === 0 && <p className="admin-empty">Belum ada lead masuk.</p>}</div></div></main>
+}

@@ -585,3 +585,17 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 .promotion-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .promotion-instagram, .promotion-inline-link { color: inherit; font-size: .82rem; text-decoration: underline; text-underline-offset: 4px; }
 .promotion-inline-link { display: inline-block; margin-top: 1.25rem; color: var(--text); }
+.admin-page { min-height: 100vh; padding: 3rem var(--pad); background: var(--bg); }
+.admin-login { width: min(100%, 440px); margin: 10vh auto; padding: 2.5rem; background: var(--bg-card); border-radius: var(--radius); }
+.admin-login h1, .admin-header h1 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 400; }
+.admin-login > p:not(.eyebrow) { margin: 1rem 0 2rem; color: var(--text-muted); line-height: 1.6; }
+.admin-login form { display: grid; gap: 1rem; }
+.admin-login input { width: 100%; display: block; margin-top: .4rem; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.admin-error { color: #8a3c2f; font-size: .85rem; }
+.admin-shell { max-width: 1440px; margin: 0 auto; }
+.admin-header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 2rem; }
+.admin-table-wrap { overflow-x: auto; background: var(--bg-card); border-radius: var(--radius); }
+.admin-table-wrap table { width: 100%; min-width: 1100px; border-collapse: collapse; font-size: .8rem; }
+.admin-table-wrap th, .admin-table-wrap td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.admin-table-wrap th { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+.admin-empty { padding: 2rem; color: var(--text-muted); }
